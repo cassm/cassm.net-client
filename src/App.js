@@ -1,9 +1,11 @@
 import './App.css';
+import {Frontpage} from "./Frontpage";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <section className="App">
+      <Frontpage/>
+    </section>
   );
 }
 

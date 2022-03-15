@@ -1,0 +1,39 @@
+.title {
+    grid-area: title;
+}
+
+.left-bar {
+    grid-area: left-bar;
+}
+
+.right-section-one {
+    grid-area: right-section-one;
+}
+
+.right-section-two {
+    grid-area: right-section-two;
+}
+
+.right-section-three {
+    grid-area: right-section-three;
+}
+
+section{
+    background-color: white;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-gap: 2rem;
+    grid-template-areas:
+        ". .        .                   ."
+        ". title    title               ."
+        ". left-bar right-section-one   ."
+        ". left-bar right-section-two   ."
+        ". left-bar right-section-three ."
+        ". .        .                   .";
+}
+
+div {
+    background: lightslategray;
+    border-radius: 1rem;
+}
