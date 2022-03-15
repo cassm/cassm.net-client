@@ -19,7 +19,6 @@
 }
 
 section{
-    background-color: white;
     display: grid;
     width: 100vw;
     height: 100vh;
@@ -33,7 +32,7 @@ section{
         ". .        .                   .";
 }
 
-div {
-    background: lightslategray;
+.grid-box {
+    background: rgba(161, 255, 217, 0.85);
     border-radius: 1rem;
 }

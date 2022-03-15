@@ -1,10 +1,16 @@
 import './App.css';
 import {Frontpage} from "./Frontpage";
+import {ThreeBackdrop} from "./ThreeBackdrop";
 
 function App() {
   return (
     <section className="App">
-      <Frontpage/>
+      <div className='three-backdrop-canvas'>
+        <ThreeBackdrop/>
+      </div>
+      <div className='page-section'>
+        <Frontpage/>
+      </div>
     </section>
   );
 }

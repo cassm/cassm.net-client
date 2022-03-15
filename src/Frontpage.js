@@ -3,11 +3,11 @@ import './Frontpage.css';
 export function Frontpage() {
   return (
     <section>
-      <div className='title'/>
-      <div className='left-bar'/>
-      <div className='right-section-one'/>
-      <div className='right-section-two'/>
-      <div className='right-section-three'/>
+      <div className='grid-box title'/>
+      <div className='grid-box left-bar'/>
+      <div className='grid-box right-section-one'/>
+      <div className='grid-box right-section-two'/>
+      <div className='grid-box right-section-three'/>
     </section>
   )
 }
