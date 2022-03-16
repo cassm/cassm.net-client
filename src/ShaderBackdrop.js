@@ -112,10 +112,6 @@ const ShaderBackdrop = (props) => {
     0.92, 0.0, 0.69
   ]);
 
-  useInterval(() => {
-    console.log(colours);
-  }, 1000);
-
   const [u_time, setTime] = useState(performance.now() / 1000);
 
   useInterval(() => {
