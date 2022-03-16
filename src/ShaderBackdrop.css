@@ -1,0 +1,14 @@
+
+.shader-surface {
+    background: linear-gradient(0deg, rgb(221, 0, 255) 51%, rgb(113, 251, 0) 100%);
+    animation: hue-cycle 10s infinite linear;
+}
+
+@keyframes hue-cycle {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
