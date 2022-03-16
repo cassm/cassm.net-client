@@ -9,7 +9,8 @@
   height: 100%;
 }
 
-.shader-backdrop {
+.shader-blur {
+  filter: blur(0.5rem);
   width: 100%;
   height: 100%;
   top: 0;
@@ -17,6 +18,9 @@
   position: absolute;
   z-index: 100;
   overflow: hidden;
+}
+
+.shader-backdrop {
   clip-path: url(#moon);
 }
 

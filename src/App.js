@@ -27,8 +27,10 @@ function App() {
         </defs>
       </svg>
 
-      <div className='shader-backdrop'>
-        <ShaderBackdrop/>
+      <div className='shader-blur'>
+        <div className='shader-backdrop'>
+          <ShaderBackdrop/>
+        </div>
       </div>
       <div className='page-section'>
         <Frontpage/>
