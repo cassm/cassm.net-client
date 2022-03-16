@@ -43,8 +43,10 @@ const shaders = Shaders.create({
       
       varying vec2 uv;
       void main () {
-        float effective_u = uv.y+ (u_time/-30.0);
+        // shift bands over time
+        float effective_u = uv.y + (u_time/-30.0);
         
+        // add several scales of noise to give gas giant banding effect
         effective_u += noise(vec3(uv.x*8.2, uv.y*8.2, u_time))*0.1 -0.05;
         effective_u += noise(vec3(uv.x*10.0, uv.y*10.0, u_time*0.35))*0.2 -0.1;
         effective_u += noise(vec3(uv.x*14.0, uv.y*14.0, u_time*0.58))*0.09 -0.045;
@@ -53,9 +55,12 @@ const shaders = Shaders.create({
         
         int band = int(effective_u / band_width);
         float bandOffset = fract(effective_u / band_width);
+        
+        // mix smoothly between bands
         float mixFactor = smoothstep(0.0, 0.3, bandOffset);
         vec3 colourA, colourB;
         
+        // can't dynamically index an array, so we do this.
         if (band == 0) {
           colourA = vec3(colours[0], colours[1], colours[2]);
           colourB = vec3(colours[3], colours[4], colours[5]);
@@ -95,7 +100,7 @@ const shaders = Shaders.create({
 });
 
 const ShaderBackdrop = (props) => {
-
+  // hue rotated high saturation colours at regular intervals
   const [colours] = useState([
     0.92, 0.0, 0.0,
     0.92, 0.69, 0.0,
