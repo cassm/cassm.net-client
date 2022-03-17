@@ -1,0 +1,28 @@
+.navbar {
+    font-family: 'Questrial', sans-serif;
+}
+
+.logo {
+    padding: 0;
+    margin-right: 1.5rem;
+    fill: white;
+    stroke: none;
+    width: 2rem;
+    height: 2rem;
+    transition: 1.0s;
+}
+
+.logo:hover {
+    fill: #0ff89a;
+    transition: 0.1s;
+}
+
+.brand {
+    color: #515453 !important;
+    transition: 1.0s;
+}
+
+.brand:hover {
+    color: white !important;
+    transition: 0.1s;
+}
