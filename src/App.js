@@ -1,9 +1,8 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {Frontpage} from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
-import {useState, useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Navigation} from "./Navigation";
 import {About} from "./About";
 import {Talks} from "./Talks";
