@@ -1,38 +1,14 @@
-.title {
-    grid-area: title;
+.logo-bg {
+    display: inline-block;
+    width: 50vh;
+    height: 50vh;
+    background-color: rgba(15, 248, 154, 0.45);
+    clip-path: url(#logo-clip);
 }
-
-.left-bar {
-    grid-area: left-bar;
-}
-
-.right-section-one {
-    grid-area: right-section-one;
-}
-
-.right-section-two {
-    grid-area: right-section-two;
-}
-
-.right-section-three {
-    grid-area: right-section-three;
-}
-
 section{
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
-    grid-gap: 2rem;
-    grid-template-areas:
-        ". .        .                   ."
-        ". title    title               ."
-        ". left-bar right-section-one   ."
-        ". left-bar right-section-two   ."
-        ". left-bar right-section-three ."
-        ". .        .                   .";
-}
-
-.grid-box {
-    background: rgba(161, 255, 217, 0.85);
-    border-radius: 1rem;
 }
