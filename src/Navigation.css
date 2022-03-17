@@ -30,13 +30,17 @@
 .brand, .links {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     text-decoration: none;
     color: white;
 }
 
+.brand {
+    justify-content: space-around;
+}
+
 .links {
+    justify-content: space-between;
     width: 50%;
     margin: 0;
     padding: 0;
