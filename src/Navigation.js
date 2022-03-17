@@ -1,23 +1,33 @@
 import './Navigation.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import {Container, Navbar, Nav} from 'react-bootstrap';
 import { ReactComponent as Logo} from "./logo.svg";
+import { ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
+import {Link, NavLink} from 'react-router-dom';
 
 
 export function Navigation() {
   return (
-    <Navbar bg='dark' fixed='top' className='navbar'>
-        <Container>
-          <Navbar.Brand href="#home" className='brand'>
-            <Logo className='logo'/>
-            Cassandra May
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">About</Nav.Link>
-            <Nav.Link href="#home">Talks</Nav.Link>
-            <Nav.Link href="#home">Contact</Nav.Link>
-          </Nav>
-        </Container>
-    </Navbar>
+    <div className='navbar'>
+      <div className='brand'>
+        <Link to='/'>
+          <Logo className='logo'/>
+        </Link>
+        <Link to='/' className='navlink'>
+          <h2>Cassandra May</h2>
+        </Link>
+      </div>
+
+      <div className='links'>
+        <NavLink className='navlink' to='/about'>About</NavLink>
+        <NavLink className='navlink' to='/talks'>Talks</NavLink>
+        <NavLink className='navlink' to='/contact'>Contact</NavLink>
+
+        <a href='https://github.com/cassm'>
+          <GithubLogo className='logo' fill='red'/>
+          {/*<img className='github'*/}
+          {/*     src='/GitHub-Mark-Light-64px.png'*/}
+          {/*     alt='GitHub Logo'/>*/}
+        </a>
+      </div>
+    </div>
   )
 }

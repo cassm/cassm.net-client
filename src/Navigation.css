@@ -1,5 +1,14 @@
 .navbar {
+    box-sizing: border-box;
+    width: 100%;
     font-family: 'Questrial', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    align-items: center;
+    color: white;
+    background-color: #232123;
 }
 
 .logo {
@@ -10,6 +19,7 @@
     width: 2rem;
     height: 2rem;
     transition: 1.0s;
+    vertical-align: middle;
 }
 
 .logo:hover {
@@ -17,12 +27,44 @@
     transition: 0.1s;
 }
 
-.brand {
-    color: #515453 !important;
+.brand, .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.navlink {
+    text-decoration: none;
+    color: white;
     transition: 1.0s;
 }
 
-.brand:hover {
-    color: white !important;
+.navlink:hover {
+    color: #0ff89a;
     transition: 0.1s;
 }
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.brand {
+    width: 20%;
+}
+
+.github {
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
