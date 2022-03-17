@@ -26,6 +26,11 @@
   clip-path: url(#moon);
 }
 
+.navbar {
+  z-index: 201;
+  position: absolute;
+}
+
 .page-section {
   height: 100%;
   top: 0;

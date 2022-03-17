@@ -2,6 +2,7 @@ import './App.css';
 import {Frontpage} from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
 import {useState, useEffect} from "react";
+import {Navigation} from "./Navigation";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -19,21 +20,25 @@ function App() {
 
   return (
     <section className="App">
-      <svg width='0' height='0'>
-        <defs>
-          <clipPath id='moon' clipPathUnits = 'userSpaceOnUse'>
-            <circle cx={width*0.5} cy={0} r={width*0.4}/>
-          </clipPath>
-        </defs>
-      </svg>
+      <Navigation className='navbar'/>
 
-      <div className='shader-blur'>
-        <div className='shader-backdrop'>
-          <ShaderBackdrop/>
+      <div className='page'>
+        <svg width='0' height='0'>
+          <defs>
+            <clipPath id='moon' clipPathUnits = 'userSpaceOnUse'>
+              <circle cx={width*0.5} cy={0} r={width*0.4}/>
+            </clipPath>
+          </defs>
+        </svg>
+
+        <div className='shader-blur'>
+          <div className='shader-backdrop'>
+            <ShaderBackdrop/>
+          </div>
         </div>
-      </div>
-      <div className='page-section'>
-        <Frontpage/>
+        <div className='page-section'>
+          <Frontpage/>
+        </div>
       </div>
     </section>
   );
