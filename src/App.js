@@ -5,6 +5,9 @@ import {Frontpage} from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
 import {useState, useEffect} from "react";
 import {Navigation} from "./Navigation";
+import {About} from "./About";
+import {Talks} from "./Talks";
+import {Contact} from "./Contact";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -42,6 +45,9 @@ function App() {
             <div className='page-section'>
               <Routes>
                 <Route path='/' element={<Frontpage/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/talks' element={<Talks/>}/>
+                <Route path='/contact' element={<Contact/>}/>
               </Routes>
             </div>
         </div>
