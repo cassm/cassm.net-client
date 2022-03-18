@@ -5,7 +5,7 @@ import ShaderBackdrop from "./ShaderBackdrop";
 import {useEffect, useState} from "react";
 import {Navigation} from "./Navigation";
 import {About} from "./About";
-import {Talks} from "./Talks";
+import Talks from "./Talks";
 import {Contact} from "./Contact";
 
 function App() {
