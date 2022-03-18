@@ -1,5 +1,6 @@
 import './Talks.css';
 import {memo} from 'react';
+import {v4 as uuidv4} from 'uuid';
 import Talk from './Talk'
 
 const Talks = memo((props) => {
@@ -8,6 +9,7 @@ const Talks = memo((props) => {
       <Talk
         src='https://www.youtube.com/embed/iU2-qH7wGcU'
         title='[EMF 2018] Algorithmic Light Art: How to Not Suck'
+        key={uuidv4()}
         description={
           <div>
             Everybody loves blinky LEDs, but what do you do with them once you've got them to not catch fire? A veteran
@@ -26,6 +28,15 @@ const Talks = memo((props) => {
               <li>How not to random</li>
               <li>An exclusive collection of my personal fuckups</li>
             </ul>
+          </div>
+        }/>
+      <Talk
+        src='https://www.youtube.com/embed/W86cTIoMv2U'
+        title='This is just a cat video'
+        key={uuidv4()}
+        description={
+          <div>
+            I have at present only really done one recorded talk. The plural in the navigation bar is aspirational. In the meantime please enjoy this BBC documentary segment about the world's smallest cat.
           </div>
         }/>
     </div>
