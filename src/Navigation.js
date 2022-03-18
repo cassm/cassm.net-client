@@ -23,9 +23,6 @@ const Navigation = () => {
 
         <a href='https://github.com/cassm'>
           <GithubLogo className='logo' fill='red'/>
-          {/*<img className='github'*/}
-          {/*     src='/GitHub-Mark-Light-64px.png'*/}
-          {/*     alt='GitHub Logo'/>*/}
         </a>
       </div>
     </div>
