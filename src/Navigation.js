@@ -4,7 +4,7 @@ import { ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
 import {Link, NavLink} from 'react-router-dom';
 
 
-export function Navigation() {
+const Navigation = () => {
   return (
     <div className='navbar'>
       <div className='brand'>
@@ -31,3 +31,5 @@ export function Navigation() {
     </div>
   )
 }
+
+export default Navigation;

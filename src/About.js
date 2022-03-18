@@ -1,3 +1,5 @@
-export function About() {
+const About = () => {
   return null;
 }
+
+export default About;

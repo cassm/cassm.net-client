@@ -1,3 +1,5 @@
-export function Contact() {
+const Contact = () => {
   return null;
 }
+
+export default Contact;

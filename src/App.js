@@ -3,10 +3,10 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {Frontpage} from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
 import {useEffect, useState} from "react";
-import {Navigation} from "./Navigation";
-import {About} from "./About";
+import Navigation from "./Navigation";
+import About from "./About";
 import Talks from "./Talks";
-import {Contact} from "./Contact";
+import Contact from "./Contact";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
