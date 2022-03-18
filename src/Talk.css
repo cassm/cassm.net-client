@@ -28,11 +28,11 @@
 }
 
 .video-embed {
-    flex: 1 1 20rem;
+    flex: 2 1 20rem;
     position: relative;
     overflow: hidden;
-    min-width: 20rem;
-    min-height: 12rem;
+    min-width: 15rem;
+    min-height: 20rem;
 }
 
 .video-embed iframe,
@@ -47,7 +47,7 @@
 }
 
 .description {
-    flex: 1 1 20rem;
+    flex: 3 1 30rem;
     text-align: left;
 }
 
