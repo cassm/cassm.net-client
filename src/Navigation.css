@@ -39,6 +39,10 @@
     justify-content: space-around;
 }
 
+.brand h2 {
+    margin: 0;
+}
+
 .links {
     justify-content: space-between;
     width: 50%;
