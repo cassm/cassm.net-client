@@ -30,8 +30,8 @@ function App() {
         <div className='page'>
           <svg width='0' height='0'>
             <defs>
-              <clipPath id='moon' clipPathUnits = 'userSpaceOnUse'>
-                <circle cx={width*0.5} cy={0} r={width*0.4}/>
+              <clipPath id='moon' clipPathUnits='userSpaceOnUse'>
+                <circle cx={width * 0.5} cy={0} r={width * 0.4}/>
               </clipPath>
             </defs>
           </svg>
@@ -41,14 +41,14 @@ function App() {
               <ShaderBackdrop/>
             </div>
           </div>
-            <div className='page-section'>
-              <Routes>
-                <Route path='/' element={<Frontpage/>}/>
-                <Route path='/about' element={<About/>}/>
-                <Route path='/talks' element={<Talks/>}/>
-                <Route path='/contact' element={<Contact/>}/>
-              </Routes>
-            </div>
+          <div className='page-section'>
+            <Routes>
+              <Route path='/' element={<Frontpage/>}/>
+              <Route path='/about' element={<About/>}/>
+              <Route path='/talks' element={<Talks/>}/>
+              <Route path='/contact' element={<Contact/>}/>
+            </Routes>
+          </div>
         </div>
       </Router>
     </div>
