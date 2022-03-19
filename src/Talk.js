@@ -4,7 +4,6 @@ import {v4 as uuidv4} from 'uuid';
 const Talk = (props) => {
   return (
     <div className='container' key={uuidv4()}>
-      <h3>{props.title}</h3>
       <div className='talk' key={uuidv4()}>
         <div className='video-embed'>
           <iframe
@@ -16,6 +15,7 @@ const Talk = (props) => {
             title={props.title}/>
         </div>
         <div className='description'>
+          <h3>{props.title}</h3>
           {props.description}
         </div>
       </div>
