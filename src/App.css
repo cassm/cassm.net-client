@@ -3,7 +3,6 @@
 .App {
   height: 100%;
   text-align: center;
-  background: #100d10;
 }
 
 #moon {
@@ -35,8 +34,17 @@
 
 .page-section {
   height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   position: absolute;
   z-index: 200;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 3rem);
+  top: 3rem;
+  left: 0;
 }
