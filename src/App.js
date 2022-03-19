@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <section className="App">
+    <div className="App">
       <Router>
         <Navigation className='navbar'/>
 
@@ -51,7 +51,7 @@ function App() {
             </div>
         </div>
       </Router>
-    </section>
+    </div>
   );
 }
 
