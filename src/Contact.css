@@ -1,25 +1,27 @@
 form {
+    font-family: 'Questrial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
     width: 50%;
-    margin: calc((100vh - 3rem) *.125) auto;
-    height: 75%;
+    margin: auto;
     padding: 1.5rem;
     border-radius: 1.5rem;
     color: white;
-    background-color: rgba(47, 43, 47, 0.75);
+    background-color: #2F2B2FBF;
 }
 
 label {
     text-align: left;
     width: 100%;
 }
-input[type=text] {
+
+input[type=text], textarea {
+    font-family: 'Questrial', sans-serif;
     margin-top: 0.5rem;
     border: 0;
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: 0.25rem;
     width: 100%;
 }
@@ -30,7 +32,19 @@ input[type=text] {
 }
 
 #submit {
+    font-family: 'Questrial', sans-serif;
+    border: 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
     margin: 0 auto;
+}
+
+#submit:hover {
+    background-color: #72f5bf;
+}
+
+#submit:active {
+    background-color: #0ff89a;
 }
 
 h2, p {
