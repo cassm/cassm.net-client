@@ -1,0 +1,30 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 50%;
+    margin: auto;
+    margin-top: calc((100vh - 3rem) *.125);
+    height: 75%;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    color: white;
+    background-color: rgba(47, 43, 47, 0.75);
+}
+
+label {
+    text-align: left;
+    width: 100%;
+}
+input[type=text] {
+    margin-top: 0.5rem;
+    border: 0;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+#submit {
+    margin: 0 auto;
+}
