@@ -10,7 +10,7 @@ const Talk = (props) => {
             className='video-iframe'
             src={props.src}
             frameBorder='0'
-            allow='autoplay; encrypted-media; picture-in-picture'
+            allow='encrypted-media; picture-in-picture'
             allowFullScreen={true}
             title={props.title}/>
         </div>
