@@ -4,8 +4,7 @@ form {
     align-items: flex-start;
     gap: 1.5rem;
     width: 50%;
-    margin: auto;
-    margin-top: calc((100vh - 3rem) *.125);
+    margin: calc((100vh - 3rem) *.125) auto;
     height: 75%;
     padding: 1.5rem;
     border-radius: 1.5rem;
