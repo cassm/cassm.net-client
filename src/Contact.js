@@ -2,29 +2,26 @@ import './Contact.css';
 import {useEffect, useState} from "react";
 import {validate as validateEmail} from 'email-validator';
 import {init as emailJsInit, sendForm} from '@emailjs/browser';
+import { useForm } from "react-hook-form";
 
 const FORM_ENDPOINT = '';
 
 const Contact = () => {
+  const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const [submitted, setSubmitted] = useState(false);
   const [hasBlurred, setHasBlurred] = useState({});
-  const [state, setState] = useState({});
 
   useEffect(() => {
     // TODO: this needs moving onto the backend
     emailJsInit(`${process.env.REACT_APP_EMAILJS_API_KEY}`);
   }, []);
 
-  const handleSubmit = () => {
+  const doSubmit = () => {
     setSubmitted(true);
     sendForm('cassm_gmail', 'cassm_net_contact_form', '.contact-form');
   }
 
   const handleChange = (e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
     if (hasBlurred[e.target.name]) {
       e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
     }
@@ -52,19 +49,25 @@ const Contact = () => {
     }
   }
 
-  const createTextField = (name, placeholder) => {
+  const createTextField = (inputName, placeholder, options = {}) => {
     return (
       <label>
-        {`${name[0].toUpperCase() + name.slice(1)}:`}
+        {`${inputName[0].toUpperCase() + inputName.slice(1)}:`}
         <input
           type='text'
-          name={name}
-          id={name}
-          value={state[name] || ''}
+          id={inputName}
           placeholder={placeholder}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required/>
+          {...register(
+            inputName,
+            {
+              ...options,
+              required: true,
+              onChange: handleChange,
+              onBlur: handleBlur,
+            })}
+        />
+        {errors[inputName]?.type === 'required' && <p className='error'>this field is required</p>}
+        {errors[inputName]?.type === 'valid_email' && <p className='error'>this field must contain a valid email address</p>}
       </label>
     );
   }
@@ -81,11 +84,11 @@ const Contact = () => {
   return (
     <form
       action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(doSubmit)}
       className='contact-form'
     >
       {createTextField('name', 'Your name')}
-      {createTextField('email', 'your@email.address')}
+      {createTextField('email', 'your@email.address', {validate: {valid_email: val => validateEmail(val)}})}
       {createTextField('message', 'Message text goes here')}
       <input type='submit' value='Submit' id='submit'/>
     </form>

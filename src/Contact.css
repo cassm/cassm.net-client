@@ -24,6 +24,11 @@ input[type=text] {
     width: 100%;
 }
 
+.error {
+    margin-top: 0.5rem;
+    color: #f57272;
+}
+
 #submit {
     margin: 0 auto;
 }
