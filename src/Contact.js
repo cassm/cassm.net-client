@@ -31,28 +31,6 @@ const Contact = () => {
     }
   }
 
-  const createTextField = (inputName, placeholder, options = {}) => {
-    return (
-      <label>
-        {`${inputName[0].toUpperCase() + inputName.slice(1)}:`}
-        <input
-          type='text'
-          id={inputName}
-          placeholder={placeholder}
-          {...register(
-            inputName,
-            {
-              ...options,
-              required: true,
-              onBlur: handleBlur,
-            })}
-        />
-        {errors[inputName]?.type === 'required' && <p className='error'>this field is required</p>}
-        {errors[inputName]?.type === 'valid_email' && <p className='error'>this field must contain a valid email address</p>}
-      </label>
-    );
-  }
-
   if (submitted) {
     return (
       <>
@@ -66,10 +44,42 @@ const Contact = () => {
     <form
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit(doSubmit)}
-      className='contact-form'
+      id='contact-form'
     >
-      {createTextField('name', 'Your name')}
-      {createTextField('email', 'your@email.address', {validate: {valid_email: val => validateEmail(val)}})}
+      <label>
+        Name
+        <input
+          type='text'
+          id='name'
+          placeholder='Your name'
+          {...register(
+            'name',
+            {
+              required: true,
+              onBlur: handleBlur,
+            })}
+        />
+        {errors.name?.type === 'required' && <p className='error'>this field is required</p>}
+      </label>
+      <label>
+        Email
+        <input
+          type='text'
+          id='email'
+          placeholder='your@email.address'
+          {...register(
+            'email',
+            {
+              required: true,
+              validate: {
+                valid_email: val => validateEmail(val)
+              },
+              onBlur: handleBlur,
+            })}
+        />
+        {errors.email?.type === 'required' && <p className='error'>this field is required</p>}
+        {errors.email?.type === 'valid_email' && <p className='error'>this field must contain a valid email address</p>}
+      </label>
       <label>
         Message
         <textarea
