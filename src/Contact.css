@@ -33,6 +33,10 @@ input[type=text] {
     margin: 0 auto;
 }
 
+h2, p {
+    color: white;
+}
+
 textarea.errored, input.errored {
     background-color: #f57272;
 }
