@@ -6,6 +6,7 @@ const FORM_ENDPOINT = '';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [hasBlurred, setHasBlurred] = useState({});
 
   const [state, setState] = useState({
     name: '',
@@ -23,7 +24,21 @@ const Contact = () => {
       ...state,
       [e.target.name]: e.target.value,
     });
+    if (hasBlurred[e.target.name]) {
+      e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
+    }
+  }
+
+  const handleBlur = (e) => {
     e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
+
+    if (e.target.value !== '') {
+      // don't provide colour feedback until the field has blurred with content
+      setHasBlurred({...hasBlurred, [e.target.name]: true});
+    } else {
+      // ...and reset this state if it's blurred while empty
+      setHasBlurred({...hasBlurred, [e.target.name]: true});
+    }
   }
 
   const getBackgroundColor = (fieldName, value) => {
@@ -59,6 +74,7 @@ const Contact = () => {
           value={state.name}
           placeholder='Your name'
           onChange={handleChange}
+          onBlur={handleBlur}
           required/>
       </label>
       <label>
@@ -70,6 +86,7 @@ const Contact = () => {
           value={state.email}
           placeholder='your@email.address'
           onChange={handleChange}
+          onBlur={handleBlur}
           required/>
       </label>
       <label>
@@ -81,6 +98,7 @@ const Contact = () => {
           value={state.message}
           placeholder='Message text goes here'
           onChange={handleChange}
+          onBlur={handleBlur}
           required/>
       </label>
       <input type='submit' value='Submit' id='submit'/>
