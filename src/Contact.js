@@ -26,7 +26,6 @@ const Contact = () => {
     } else if (e.target.id === 'email' && !validateEmail(e.target.value)) {
       e.target.className = 'errored';
     } else {
-      console.log(`${e.target.id} valid`)
       e.target.className = 'valid';
     }
   }
