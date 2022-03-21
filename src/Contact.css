@@ -7,6 +7,7 @@ form {
     width: 50%;
     margin: auto;
     padding: 1.5rem;
+    min-width: 13rem;
     border-radius: 1.5rem;
     color: white;
     background-color: #2F2B2FBF;
@@ -19,6 +20,7 @@ label {
 
 input[type=text], textarea {
     font-family: 'Questrial', sans-serif;
+    min-width: 10rem;
     margin-top: 0.5rem;
     border: 0;
     padding: 0.5rem;
