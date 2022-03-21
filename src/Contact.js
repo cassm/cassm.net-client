@@ -7,12 +7,7 @@ const FORM_ENDPOINT = '';
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [hasBlurred, setHasBlurred] = useState({});
-
-  const [state, setState] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+  const [state, setState] = useState({});
 
   const handleSubmit = () => {
     setSubmitted(true);
@@ -59,7 +54,7 @@ const Contact = () => {
           type='text'
           name={name}
           id={name}
-          value={state[name]}
+          value={state[name] || ''}
           placeholder={placeholder}
           onChange={handleChange}
           onBlur={handleBlur}
