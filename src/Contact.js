@@ -9,7 +9,6 @@ const FORM_ENDPOINT = '';
 const Contact = () => {
   const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const [submitted, setSubmitted] = useState(false);
-  const [hasBlurred, setHasBlurred] = useState({});
 
   useEffect(() => {
     // TODO: this needs moving onto the backend
@@ -21,31 +20,14 @@ const Contact = () => {
     sendForm('cassm_gmail', 'cassm_net_contact_form', '.contact-form');
   }
 
-  const handleChange = (e) => {
-    if (hasBlurred[e.target.name]) {
-      e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
-    }
-  }
-
   const handleBlur = (e) => {
-    e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
-
-    if (e.target.value !== '') {
-      // don't provide colour feedback until the field has blurred with content
-      setHasBlurred({...hasBlurred, [e.target.name]: true});
+    if (e.target.value === '') {
+      e.target.className = '';
+    } else if (e.target.id === 'email' && !validateEmail(e.target.value)) {
+      e.target.className = 'errored';
     } else {
-      // ...and reset this state if it's blurred while empty
-      setHasBlurred({...hasBlurred, [e.target.name]: true});
-    }
-  }
-
-  const getBackgroundColor = (fieldName, value) => {
-    if (value === '') {
-      return 'white';
-    } else if (fieldName === 'email' && !validateEmail(value)) {
-      return '#f57272';
-    } else {
-      return '#72f5bf';
+      console.log(`${e.target.id} valid`)
+      e.target.className = 'valid';
     }
   }
 
@@ -62,7 +44,6 @@ const Contact = () => {
             {
               ...options,
               required: true,
-              onChange: handleChange,
               onBlur: handleBlur,
             })}
         />

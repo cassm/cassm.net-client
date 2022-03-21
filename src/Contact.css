@@ -32,3 +32,16 @@ input[type=text] {
 #submit {
     margin: 0 auto;
 }
+
+textarea.errored, input.errored {
+    background-color: #f57272;
+}
+
+textarea.valid, input.valid {
+    background-color: #72f5bf;
+}
+
+textarea:focus, input:focus {
+    outline: thin solid #0ff89a;
+    background-color: white;
+}
