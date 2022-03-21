@@ -51,6 +51,23 @@ const Contact = () => {
     }
   }
 
+  const createTextField = (name, placeholder) => {
+    return (
+      <label>
+        {`${name[0].toUpperCase() + name.slice(1)}:`}
+        <input
+          type='text'
+          name={name}
+          id={name}
+          value={state[name]}
+          placeholder={placeholder}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          required/>
+      </label>
+    );
+  }
+
   if (submitted) {
     return (
       <>
@@ -65,42 +82,9 @@ const Contact = () => {
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit}
     >
-      <label>
-        Name:
-        <input
-          type='text'
-          name='name'
-          id='name'
-          value={state.name}
-          placeholder='Your name'
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required/>
-      </label>
-      <label>
-        Email:
-        <input
-          type='text'
-          name='email'
-          id='email'
-          value={state.email}
-          placeholder='your@email.address'
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required/>
-      </label>
-      <label>
-        Message:
-        <input
-          type='text'
-          name='message'
-          id='message'
-          value={state.message}
-          placeholder='Message text goes here'
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required/>
-      </label>
+      {createTextField('name', 'Your name')}
+      {createTextField('email', 'your@email.address')}
+      {createTextField('message', 'Message text goes here')}
       <input type='submit' value='Submit' id='submit'/>
     </form>
   );
