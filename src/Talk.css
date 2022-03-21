@@ -31,8 +31,7 @@
     flex: 2 1 20rem;
     position: relative;
     overflow: hidden;
-    min-width: 15rem;
-    min-height: 20rem;
+    aspect-ratio: 16/9;
 }
 
 .video-embed iframe,
