@@ -1,5 +1,6 @@
 import './Contact.css';
 import {useState} from "react";
+import {validate as validateEmail} from 'email-validator';
 
 const FORM_ENDPOINT = '';
 
@@ -22,6 +23,17 @@ const Contact = () => {
       ...state,
       [e.target.name]: e.target.value,
     });
+    e.target.style.backgroundColor = getBackgroundColor(e.target.id, e.target.value);
+  }
+
+  const getBackgroundColor = (fieldName, value) => {
+    if (value === '') {
+      return 'white';
+    } else if (fieldName === 'email' && !validateEmail(value)) {
+      return '#f57272';
+    } else {
+      return '#72f5bf';
+    }
   }
 
   if (submitted) {
