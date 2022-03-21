@@ -15,9 +15,10 @@ const Contact = () => {
     emailJsInit(`${process.env.REACT_APP_EMAILJS_API_KEY}`);
   }, []);
 
-  const doSubmit = () => {
+  const doSubmit = (formData, e) => {
     setSubmitted(true);
-    sendForm('cassm_gmail', 'cassm_net_contact_form', '.contact-form');
+    console.log(formData);
+    sendForm('cassm_gmail', 'cassm_net_contact_form', e.target);
   }
 
   const handleBlur = (e) => {
