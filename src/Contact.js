@@ -1,6 +1,7 @@
 import './Contact.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {validate as validateEmail} from 'email-validator';
+import {init as emailJsInit, sendForm} from '@emailjs/browser';
 
 const FORM_ENDPOINT = '';
 
@@ -9,9 +10,14 @@ const Contact = () => {
   const [hasBlurred, setHasBlurred] = useState({});
   const [state, setState] = useState({});
 
+  useEffect(() => {
+    // TODO: this needs moving onto the backend
+    emailJsInit(`${process.env.REACT_APP_EMAILJS_API_KEY}`);
+  }, []);
+
   const handleSubmit = () => {
     setSubmitted(true);
-    //TODO: actually do anything
+    sendForm('cassm_gmail', 'cassm_net_contact_form', '.contact-form');
   }
 
   const handleChange = (e) => {
@@ -76,6 +82,7 @@ const Contact = () => {
     <form
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit}
+      className='contact-form'
     >
       {createTextField('name', 'Your name')}
       {createTextField('email', 'your@email.address')}
