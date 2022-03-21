@@ -69,7 +69,21 @@ const Contact = () => {
     >
       {createTextField('name', 'Your name')}
       {createTextField('email', 'your@email.address', {validate: {valid_email: val => validateEmail(val)}})}
-      {createTextField('message', 'Message text goes here')}
+      <label>
+        Message
+        <textarea
+          id='message'
+          rows='10'
+          placeholder='Message text goes here'
+          {...register(
+            'message',
+            {
+              required: true,
+              onBlur: handleBlur,
+            })}
+        />
+        {errors.message?.type === 'required' && <p className='error'>this field is required</p>}
+      </label>
       <input type='submit' value='Submit' id='submit'/>
     </form>
   );
