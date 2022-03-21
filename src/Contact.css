@@ -8,6 +8,7 @@ form {
     margin: auto;
     padding: 1.5rem;
     min-width: 13rem;
+    max-width: 53rem;
     border-radius: 1.5rem;
     color: white;
     background-color: #2F2B2FBF;
