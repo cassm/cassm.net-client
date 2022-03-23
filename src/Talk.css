@@ -53,8 +53,9 @@
 
 .description ul{
     list-style-position: outside;
-    padding: 0 1rem;
+    padding: 1rem 0 0 1rem;
+    list-style-type: '\00bb';
 }
 .description li {
-    margin-bottom: 0.25rem;
+    padding: 0.75rem 0 0 0.5rem;
 }
