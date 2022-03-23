@@ -52,3 +52,19 @@
   top: 3rem;
   left: 0;
 }
+
+a {
+  text-decoration: none;
+  color: #72f5bf;
+  transition: 1.0s;
+}
+
+a:hover {
+  color: #0ff89a;
+  transition: 0.1s;
+}
+
+a:active {
+  color: #fde480;
+  transition: 0.1s;
+}

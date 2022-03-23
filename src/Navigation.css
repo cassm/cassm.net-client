@@ -61,6 +61,11 @@
     transition: 0.1s;
 }
 
+.navlink:active {
+    color: #fde480;
+    transition: 0.1s;
+}
+
 h3 {
     margin: 0;
     padding: 0;
