@@ -29,7 +29,6 @@
 
 .video-embed {
     flex: 2 1 30rem;
-    position: relative;
     overflow: hidden;
     aspect-ratio: 16/9;
     border-radius: 0.5rem;
@@ -38,10 +37,6 @@
 .video-embed iframe,
 .video-embed object,
 .video-embed embed {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     aspect-ratio: 16/9;
 }
