@@ -12,7 +12,7 @@ const Navigation = () => {
           <Logo className='logo'/>
         </Link>
         <Link to='/' className='navlink'>
-          <h2>Cassandra May</h2>
+          Cassandra May
         </Link>
       </div>
 
