@@ -6,6 +6,7 @@
     align-items: center;
     color: white;
     width: 75%;
+    max-width: 75rem;
     background-color: rgba(47, 43, 47, 0.75);
     padding: 1.5rem;
     border-radius: 1.5rem;
