@@ -50,8 +50,14 @@
     flex: 3 1 20rem;
     text-align: left;
     align-self: flex-start;
+    line-height: 120%;
 }
 
+.description h3 {
+    font-size: 1.25rem;
+    color: #72f5bf;
+    margin-bottom: 1.5rem;
+}
 .description ul{
     list-style-position: outside;
     padding: 1rem 0 0 1rem;
