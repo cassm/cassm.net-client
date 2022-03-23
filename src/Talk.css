@@ -49,6 +49,7 @@
 .description {
     flex: 3 1 20rem;
     text-align: left;
+    align-self: flex-start;
 }
 
 .description ul{
