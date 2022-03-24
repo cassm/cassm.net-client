@@ -9,8 +9,32 @@
     background-color: rgba(47, 43, 47, 0.75);
     padding: 1vw;
     border-radius: 2rem;
+    border-top-left-radius: 17vw;
     margin: 3rem 0;
     gap: 0;
+}
+
+@media only screen and (min-width: 16.667rem) {
+    .flex-container {
+        border-top-left-radius: 17.5vw;
+    }
+}
+
+@media only screen and (min-width: 33.333rem) {
+    .flex-container {
+        border-top-left-radius: 18vw;
+    }
+}
+@media only screen and (min-width: 50rem) {
+    .flex-container {
+        border-top-left-radius: 18.5vw;
+    }
+}
+
+@media only screen and (min-width: 66.667rem) {
+    .flex-container {
+        border-top-left-radius: 12.6667rem;
+    }
 }
 
 .splash {
