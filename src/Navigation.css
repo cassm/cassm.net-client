@@ -54,6 +54,8 @@
     text-decoration: none;
     color: white;
     transition: 1.0s;
+    flex-shrink: 0;
+    padding: 0 1rem;
 }
 
 .navlink:hover {
