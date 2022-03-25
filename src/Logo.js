@@ -11,9 +11,9 @@ const Logo = props => {
           additive="replace"/>;
 
   return (
+    // defs are global, so we need to define two and conditionally apply them rather than conditionally defining one
     <svg width={props.width} height={props.height} className={props.className} viewBox="0 0 308 296.75" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- defs are global, so we need to define two and conditionally apply them rather than conditionally defining one -->
         <clipPath id="M_clip">
           <path d="M-5.178-5.141h330.86v306.37H-5.178zm138.73 44.727a11.026 11.026 0 0 0-11.025 11.025v141.41a11.026 11.026 0 0 0 11.025 11.025h37.2a11.026 11.026 0 0 0 11.024-11.025v-20.998l17.797 25.037a11.026 11.026 0 0 0 8.986 4.639h.26a11.026 11.026 0 0 0 8.994-4.648l17.701-24.961v20.932a11.026 11.026 0 0 0 11.025 11.025h37.2a11.026 11.026 0 0 0 11.024-11.025V50.506a11.026 11.026 0 0 0-11.025-11.025h-14.949a11.026 11.026 0 0 0-8.904 4.525l-51.24 70.195-51.24-70.195a11.026 11.026 0 0 0-8.904-4.525z"/>
         </clipPath>
