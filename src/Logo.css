@@ -1,0 +1,15 @@
+#M_path, #M-clip {
+    /*animation: 3s infinite forwards slide-in;*/
+}
+
+@keyframes slide-in {
+    0% {
+        fill: red;
+        transform: translate(-10%, 0);
+    }
+    100% {
+        /*fill: black;*/
+        fill: red;
+        transform: translate(0,0);
+    }
+}

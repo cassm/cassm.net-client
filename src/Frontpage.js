@@ -1,11 +1,10 @@
 import './Frontpage.css';
-import { ReactComponent as Logo} from "./logo.svg";
+import Logo from './Logo';
 
 export function Frontpage() {
   return (
   <div>
-    <div className='logo-bg'/>
-    {/*<Logo height='600' width='600'fill='white' fill-opacity='20%' className='front-logo'/>*/}
+    <Logo height='600' doAnimate className='front-logo'/>
   </div>
   )
 }

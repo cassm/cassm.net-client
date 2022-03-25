@@ -1,5 +1,5 @@
 import './Navigation.css';
-import { ReactComponent as Logo} from "./logo.svg";
+import Logo from './Logo';
 import { ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
 import {Link, NavLink} from 'react-router-dom';
 
