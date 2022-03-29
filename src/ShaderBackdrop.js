@@ -119,7 +119,7 @@ const ShaderBackdrop = (props) => {
   }, 1000 / 60);
 
   return (
-    <Surface width='100%' height='100%' backgroundColor='transparent' className='shader-surface'>
+    <Surface width={window.innerWidth} height={window.innerHeight} className='shader-surface'>
       <Node shader={shaders.jupiter} uniforms={{colours: new Float32Array(colours), u_time}}/>;
     </Surface>
   );
