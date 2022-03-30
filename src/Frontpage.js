@@ -11,7 +11,23 @@ const Frontpage = memo(() => {
   const tl = useRef();
   const tl_repeat = useRef();
 
-  const minDimension = Math.min(window.innerHeight, window.innerWidth);
+  let minDimension = Math.min(window.innerHeight, window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      minDimension = Math.min(window.innerHeight, window.innerWidth);
+      gsap.to(q("#logo-instance"), {
+        top: window.innerHeight/2 - minDimension*0.25,
+        left: window.innerWidth/2 - minDimension*0.26,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     tl.current = gsap.timeline()
