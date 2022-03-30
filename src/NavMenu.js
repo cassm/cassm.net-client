@@ -31,6 +31,11 @@ const NavMenu = (props) => {
     animation.current.reversed() ? animation.current.play() : animation.current.reverse();
   }
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+    animation.current.reverse();
+  }
+
   return (
     <div ref={el} className='menu-container'>
       <button id='hamburger' onClick={handleMenuClick} className={
@@ -44,7 +49,7 @@ const NavMenu = (props) => {
         <div id='hamburger-bottom' className='hamburger-bar'/>
       </button>
       <div id='menu-box'>
-        <NavLinks/>
+        <NavLinks onClick={handleNavClick}/>
       </div>
     </div>
 
