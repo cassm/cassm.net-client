@@ -3,7 +3,6 @@ import Logo from './Logo';
 import {gsap} from 'gsap';
 import {useEffect, useRef, memo} from "react";
 import {v4 as uuidv4} from 'uuid';
-import useInterval from "use-interval";
 
 const Frontpage = memo(() => {
   const el = useRef();
@@ -52,7 +51,7 @@ const Frontpage = memo(() => {
         <circle cx="50" cy="51" r="50" id='start-circle'/>
       </svg>
       <Logo key={uuidv4()} className='logo-instance front-logo'/>
-      <Logo key={uuidv4()} index={1} className='logo-instance echo-logo logo1'/>
+      <Logo key={uuidv4()} className='logo-instance echo-logo logo1'/>
       <Logo key={uuidv4()} className='logo-instance echo-logo logo2'/>
       <Logo key={uuidv4()} className='logo-instance echo-logo logo3'/>
       <Logo key={uuidv4()} className='logo-instance echo-logo logo4'/>
