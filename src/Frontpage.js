@@ -35,13 +35,13 @@ const Frontpage = memo(() => {
   useEffect(() => {
     tl.current = gsap.timeline()
       .set(q(".logo-instance"), {scale: 0, rotation: -90, transformOrigin: "50%"})
-      .set(q("#start-circle"), {opacity: 0.7, scale: 1, transformOrigin: "50%"})
+      .set(q("#start-circle"), {opacity: 0.9, scale: 1, transformOrigin: "50%"})
       .to('#start-circle', {scale: 0, ease: "back.in", duration: 0.5}, "0")
       .add("point")
       .to(q(".logo-instance"), {opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "back.out(1.7)"}, "point-0.15")
       .add("pop", ">")
       .to(q(".front-logo"), {scale: 1, duration: 0.6, ease: "power4.out"}, "pop")
-      .to(q(".front-logo"), {opacity: 0.4, duration: 4, ease: "power2.out"}, "pop")
+      .to(q(".front-logo"), {opacity: 0.6, duration: 4, ease: "power2.out"}, "pop")
 
     tl_repeat.current = gsap.timeline({repeat: -1, repeatDelay: 3, delay: 0.75})
       .set(q(".echo-logo"), {opacity: 0}, "0")

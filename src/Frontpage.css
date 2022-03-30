@@ -5,7 +5,7 @@
     top: calc(50vh - min(25vw, 25vh) - 1.5rem);
     left: calc(50vw - min(25vw, 25vh));
     fill: white;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .front-logo {
