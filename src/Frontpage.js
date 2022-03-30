@@ -19,6 +19,10 @@ const Frontpage = memo(() => {
         top: window.innerHeight/2 - minDimension*0.25,
         left: window.innerWidth/2 - minDimension*0.26,
       });
+      gsap.to(q("#start-circle-svg"), {
+        top: window.innerHeight/2 - minDimension*0.25,
+        left: window.innerWidth/2 - minDimension*0.26,
+      });
     }
 
     window.addEventListener('resize', handleResize);
@@ -47,7 +51,7 @@ const Frontpage = memo(() => {
 
   return (
     <div className='logo-container' ref={el}>
-      <svg height={minDimension*0.5} width={minDimension*0.5*1.0125} id='start-circle-svg' viewBox="0 0 100 101">
+      <svg id='start-circle-svg' viewBox="0 0 100 101">
         <circle cx="50" cy="51" r="50" id='start-circle'/>
       </svg>
       <Logo key={uuidv4()} className='logo-instance front-logo'/>

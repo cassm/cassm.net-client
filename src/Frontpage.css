@@ -1,7 +1,8 @@
 #start-circle-svg {
     position: absolute;
     overflow: visible;
-    top: calc(50vh - min(25vw, 25vh));
+    height: calc(min(50vw, 50vh));
+    top: calc(50vh - min(25vw, 25vh) - 1.5rem);
     left: calc(50vw - min(25vw, 25vh));
     fill: white;
     opacity: 0.7;
@@ -35,7 +36,7 @@
 .logo-instance {
     height: calc(min(50vw, 50vh));
     position: absolute;
-    top: calc(50vh - min(25vw, 25vh));
+    top: calc(50vh - min(25vw, 25vh) - 1.5rem);
     left: calc(50vw - min(26vw, 26vh));
 }
 
