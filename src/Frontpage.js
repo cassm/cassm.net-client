@@ -15,19 +15,26 @@ export function Frontpage() {
 
   useEffect(() => {
     tl.current = gsap.timeline()
-      .set(q("#logo"), {opacity: 0, transformOrigin: "50%"})
-      .set(q(".front-logo"), {opacity: 1, scale: 1.0125}, "0")
+      .set(q(".logo-instance"), {scale: 0, rotation: -90, transformOrigin: "50%"})
+      .set(q("#start-circle"), {opacity: 0.7, scale: 1, transformOrigin: "50%"})
+      .to('#start-circle', {scale: 0, ease: "back.in", duration: 0.5}, "0")
+      .add("point")
+      .to(q(".logo-instance"), {opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "back.out(1.7)"}, "point-0.15")
       .add("pop", ">")
-      .to(q(".front-logo"), {scale: 1, duration: 0.5, ease: "power4.out"}, "pop")
+      .to(q(".front-logo"), {scale: 1, duration: 0.6, ease: "power4.out"}, "pop")
       .to(q(".front-logo"), {opacity: 0.4, duration: 4, ease: "power2.out"}, "pop")
 
-    tl_repeat.current = gsap.timeline({repeat: -1, repeatDelay: 3})
-      .to(q(".echo-logo"), {opacity: 0.75, scale: 1.0125, duration: 0.15, stagger: {each: 0.35}}, "0")
-      .to(q(".echo-logo"), {opacity: 0, scale: 1.125, delay: 0.1, duration: 2, ease: "power1.out", stagger: {each: 0.35, from: "start"}}, "0")
+    tl_repeat.current = gsap.timeline({repeat: -1, repeatDelay: 3, delay: 0.75})
+      .set(q(".echo-logo"), {opacity: 0}, "0")
+      .to(q(".echo-logo"), {opacity: 0.75, duration: 0.25, stagger: {each: 0.35}}, "0.38")
+      .to(q(".echo-logo"), {opacity: 0, scale: 1.125, delay: 0.1, duration: 2, ease: "power1.out", stagger: {each: 0.35, from: "start"}}, "<")
   }, []);
 
   return (
-    <div ref={el}>
+    <div className='logo-container' ref={el}>
+      <svg height={minDimension*0.5} width={minDimension*0.5*1.0125} id='start-circle-svg' viewBox="0 0 100 101">
+        <circle cx="50" cy="51" r="50" id='start-circle'/>
+      </svg>
       <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance front-logo'/>
       <Logo height={minDimension*0.5} key={uuidv4()} index={1} className='logo-instance echo-logo logo1'/>
       <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance echo-logo logo2'/>
