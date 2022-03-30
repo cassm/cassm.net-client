@@ -35,11 +35,11 @@ const Frontpage = memo(() => {
       <svg height={minDimension*0.5} width={minDimension*0.5*1.0125} id='start-circle-svg' viewBox="0 0 100 101">
         <circle cx="50" cy="51" r="50" id='start-circle'/>
       </svg>
-      <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance front-logo'/>
-      <Logo height={minDimension*0.5} key={uuidv4()} index={1} className='logo-instance echo-logo logo1'/>
-      <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance echo-logo logo2'/>
-      <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance echo-logo logo3'/>
-      <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance echo-logo logo4'/>
+      <Logo key={uuidv4()} className='logo-instance front-logo'/>
+      <Logo key={uuidv4()} index={1} className='logo-instance echo-logo logo1'/>
+      <Logo key={uuidv4()} className='logo-instance echo-logo logo2'/>
+      <Logo key={uuidv4()} className='logo-instance echo-logo logo3'/>
+      <Logo key={uuidv4()} className='logo-instance echo-logo logo4'/>
     </div>
   )
 });

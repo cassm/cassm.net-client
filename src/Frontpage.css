@@ -41,6 +41,7 @@
 }
 
 .logo-instance {
+    height: calc(min(50vw, 50vh));
     position: absolute;
     top: calc(50vh - min(25vw, 25vh));
     left: calc(50vw - min(26vw, 26vh));
