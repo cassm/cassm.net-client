@@ -2,7 +2,7 @@ import './NavBar.css';
 import Logo from './Logo';
 import {Link} from 'react-router-dom';
 import NavLinks from "./NavLinks";
-
+import NavMenu from "./NavMenu";
 
 const NavBar = () => {
   return (
@@ -18,6 +18,7 @@ const NavBar = () => {
 
       <div className='links'>
         <NavLinks id="verbose-links"/>
+        <NavMenu id="hamburger-menu"/>
       </div>
     </div>
   )
