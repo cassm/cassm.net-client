@@ -98,3 +98,10 @@ h3 {
         display: none;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    #name {
+        display: none;
+    }
+}
+
