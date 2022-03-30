@@ -1,11 +1,12 @@
 .navbar {
-    width: 100%;
+    /*width: 100vw;*/
     font-family: 'Questrial', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 2.5rem;
     align-items: center;
+    flex-shrink: 0;
     color: white;
     height: 3rem;
     background-color: #232123;
@@ -29,6 +30,7 @@
 
 .brand, .links {
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     align-items: center;
     text-decoration: none;

@@ -1,17 +1,17 @@
-import './Navigation.css';
+import './NavBar.css';
 import Logo from './Logo';
 import { ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
 import {Link, NavLink} from 'react-router-dom';
 
 
-const Navigation = () => {
+const NavBar = () => {
   return (
     <div className='navbar'>
       <div className='brand'>
         <Link to='/'>
           <Logo className='logo'/>
         </Link>
-        <Link to='/' className='navlink'>
+        <Link to='/' className='navlink' id='name'>
           Cassandra May
         </Link>
       </div>
@@ -29,4 +29,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation;
+export default NavBar;

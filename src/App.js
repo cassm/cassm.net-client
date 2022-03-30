@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Frontpage from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
 import {useEffect, useState} from "react";
-import Navigation from "./Navigation";
+import NavBar from "./NavBar";
 import About from "./About";
 import Talks from "./Talks";
 import Contact from "./Contact";
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation className='navbar'/>
+        <NavBar className='navbar'/>
 
         <div className='page'>
           <svg width='0' height='0'>
