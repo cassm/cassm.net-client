@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import {Frontpage} from "./Frontpage";
+import Frontpage from "./Frontpage";
 import ShaderBackdrop from "./ShaderBackdrop";
 import {useEffect, useState} from "react";
 import Navigation from "./Navigation";

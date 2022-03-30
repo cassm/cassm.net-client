@@ -1,11 +1,11 @@
 import './Frontpage.css';
 import Logo from './Logo';
 import {gsap} from 'gsap';
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, memo} from "react";
 import {v4 as uuidv4} from 'uuid';
 import useInterval from "use-interval";
 
-export function Frontpage() {
+const Frontpage = memo(() => {
   const el = useRef();
   const q = gsap.utils.selector(el);
   const tl = useRef();
@@ -42,4 +42,6 @@ export function Frontpage() {
       <Logo height={minDimension*0.5} key={uuidv4()} className='logo-instance echo-logo logo4'/>
     </div>
   )
-}
+});
+
+export default Frontpage;
