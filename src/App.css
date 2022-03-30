@@ -22,6 +22,7 @@
 
 .shader-backdrop {
   clip-path: url(#moon);
+  height: calc(100% - 3rem);
 }
 
 .navbar {

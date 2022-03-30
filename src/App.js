@@ -10,15 +10,17 @@ import Contact from "./Contact";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
   useEffect(() => {
-    const updateWidth = () => {
+    const updateHeight = () => {
+      setHeight(window.innerHeight);
       setWidth(window.innerWidth);
     }
 
-    window.addEventListener('resize', updateWidth);
+    window.addEventListener('resize', updateHeight);
 
     return () => {
-      window.removeEventListener('resize', updateWidth);
+      window.removeEventListener('resize', updateHeight);
     }
   }, []);
 
@@ -31,7 +33,7 @@ function App() {
           <svg width='0' height='0'>
             <defs>
               <clipPath id='moon' clipPathUnits='userSpaceOnUse'>
-                <circle cx={width * 0.5} cy={0} r={width * 0.4}/>
+                <circle cx={width * 0.5} cy={0} r={height * 0.8}/>
               </clipPath>
             </defs>
           </svg>
