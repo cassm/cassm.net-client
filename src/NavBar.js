@@ -18,6 +18,8 @@ const NavBar = () => {
 
       <div className='links'>
         <NavLinks id="verbose-links"/>
+      </div>
+      <div className='menu'>
         <NavMenu id="hamburger-menu"/>
       </div>
     </div>

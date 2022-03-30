@@ -14,11 +14,10 @@
 
 .logo {
     padding: 0;
-    margin-right: 1.5rem;
     fill: white;
     stroke: none;
-    max-width: 3rem;
     height: 2rem;
+    max-width: 3rem;
     transition: 1.0s;
     vertical-align: middle;
 }
@@ -38,7 +37,8 @@
 }
 
 .brand {
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 
 .brand h2 {
@@ -47,7 +47,7 @@
 
 .links {
     justify-content: space-between;
-    width: 50%;
+    flex-basis: 50%;
     margin: 0;
     padding: 0;
 }
@@ -57,7 +57,6 @@
     color: white;
     transition: 1.0s;
     flex-shrink: 0;
-    padding: 0 1rem;
 }
 
 .navlink:hover {
@@ -85,3 +84,18 @@ h3 {
     padding: 0;
 }
 
+.menu {
+    flex-basis: 20%;
+}
+
+@media only screen and (max-width: 850px) {
+    .links {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .menu {
+        display: none;
+    }
+}

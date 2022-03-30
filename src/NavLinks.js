@@ -8,7 +8,7 @@ const NavLinks = () => {
       <NavLink className='navlink' to='/talks'>Talks</NavLink>
       <NavLink className='navlink' to='/contact'>Contact</NavLink>
 
-      <a href='https://github.com/cassm'>
+      <a href='https://github.com/cassm' className='.logo-container'>
         <GithubLogo className='logo' fill='red'/>
       </a>
     </>
