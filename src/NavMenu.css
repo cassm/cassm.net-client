@@ -12,9 +12,18 @@
     justify-content: center;
 }
 
+.closed-hamburger:hover .hamburger-bar {
+    background-color: #0ff89a;
+}
+
+.open-hamburger:hover .hamburger-bar {
+    background-color: #F7C90F;
+}
+
 .hamburger-bar {
     background-color: white;
     height: 0.2rem;
     border-radius: 0.1rem;
     margin: 0;
+    transition: background-color 0.5s;
 }
