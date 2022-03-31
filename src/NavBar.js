@@ -1,10 +1,11 @@
 import './NavBar.css';
 import Logo from './Logo';
 import {Link} from 'react-router-dom';
+import {memo} from 'react';
 import NavLinks from "./NavLinks";
 import NavMenu from "./NavMenu";
 
-const NavBar = () => {
+const NavBar = memo(() => {
   return (
     <div className='navbar'>
       <div className='brand'>
@@ -24,6 +25,6 @@ const NavBar = () => {
       </div>
     </div>
   )
-}
+});
 
 export default NavBar;
