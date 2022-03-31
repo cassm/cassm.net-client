@@ -12,18 +12,13 @@
 }
 
 .logo {
-    padding: 0;
     fill: white;
     stroke: none;
-    height: 2rem;
-    max-width: 3rem;
+    height: 2.5rem;
+    max-width: 3.5rem;
+    border-radius: 1.25rem;
     transition: 1.0s;
     vertical-align: middle;
-}
-
-.logo:hover {
-    fill: #0ff89a;
-    transition: 0.1s;
 }
 
 .brand, .links {
@@ -51,20 +46,28 @@
     padding: 0;
 }
 
-.navlink {
-    text-decoration: none;
-    color: white;
-    transition: 1.0s;
+#name {
     flex-shrink: 0;
 }
 
-.navlink:hover {
-    color: #0ff89a;
-    transition: 0.1s;
+.navlink {
+    text-decoration: none;
+    color: white;
+    transition: color 1.0s;
+    flex-shrink: 0;
+    padding: 0.5em 1.0em;
+    border-radius: 1em;
 }
 
-.navlink:active {
-    color: #fde480;
+.navlink:hover, .logo:hover {
+    color: #0ff89a;
+    fill: #0ff89a;
+    transition: 0.1s;
+    transition-property: color, background-color, fill;
+}
+
+.navlink:active, .logo:active {
+    background-color: rgba(243, 227, 243, 0.73);
     transition: 0.1s;
 }
 
