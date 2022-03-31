@@ -3,6 +3,7 @@ import Logo from './Logo';
 import {Link} from 'react-router-dom';
 import {memo} from 'react';
 import NavLinks from "./NavLinks";
+import FancyLink from "./FancyLink";
 import NavMenu from "./NavMenu";
 
 const NavBar = memo(() => {
@@ -12,9 +13,9 @@ const NavBar = memo(() => {
         <Link to='/'>
           <Logo className='logo'/>
         </Link>
-        <Link to='/' className='navlink' id='name'>
-          Cassandra May
-        </Link>
+        <div id="name">
+          <FancyLink content="Cassandra May" to="/"/>
+        </div>
       </div>
 
       <div className='links'>
