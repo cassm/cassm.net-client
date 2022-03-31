@@ -4,7 +4,7 @@
     border-radius: 1.25rem;
 }
 
-#link-bg {
+#link-bg, #link-bg-active {
     overflow: visible;
     fill: rgb(112,105,112);
     opacity: 0;

@@ -8,6 +8,7 @@ const FancyLink = (props) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
   const openTl = useRef();
+  const activeTl = useRef();
 
   const [dimensions, setDimensions] = useState({x: 0, y: 0})
 
@@ -27,6 +28,7 @@ const FancyLink = (props) => {
 
   useEffect(() => {
     openTl.current = gsap.timeline({paused: true, defaults: {duration: 0.1, ease: "back.out(1.5)"}});
+    activeTl.current = gsap.timeline({paused: true});
 
     openTl.current
       .set(q("#link-bg"), {opacity: 0, scale: 1})
@@ -39,6 +41,10 @@ const FancyLink = (props) => {
       .to(q("#left-circle"), {x: -(svgWidth/2 - 50)}, "<")
       .to(q("#centre-rect"), {scaleX: 1}, "<")
 
+    activeTl.current
+      .to(q("#link-bg-active"), {opacity: 0.25, duration: 0.1}, "0")
+      .to(q("#link-bg-active"), {scale: 1.25, opacity: 0, duration: 0.4}, "<");
+
     const openBg = () => {
       openTl.current.play();
     }
@@ -47,14 +53,18 @@ const FancyLink = (props) => {
       openTl.current.reverse();
     }
 
+    const clickBg = () => {
+      activeTl.current.restart();
     }
 
     el.current.addEventListener("mouseenter", openBg);
     el.current.addEventListener("mouseleave", closeBg);
+    el.current.addEventListener("click", clickBg);
 
     return () => {
       el.current.removeEventListener("mouseenter", openBg)
       el.current.removeEventListener("mouseleave", closeBg)
+      el.current.removeEventListener("click", clickBg);
     }
   }, [dimensions]);
 
@@ -67,6 +77,11 @@ const FancyLink = (props) => {
         <rect id="centre-rect" x="50" y="0" height="100" width={`${svgWidth-100}`}/>
         <circle id="left-circle" cx={svgWidth/2} cy="50" r="50"/>
         <circle id="right-circle" cx={svgWidth/2} cy="50" r="50"/>
+      </svg>
+      <svg id="link-bg-active" viewBox={`0 0 ${svgWidth} 100`} style={{marginTop: -dimensions.y, height: dimensions.y, width: dimensions.x}}>
+        <rect id="centre-rect-active" x="50" y="0" height="100" width={`${svgWidth-100}`}/>
+        <circle id="left-circle-active" cx="50" cy="50" r="50"/>
+        <circle id="right-circle-active" cx={svgWidth-50} cy="50" r="50"/>
       </svg>
 
     </div>
