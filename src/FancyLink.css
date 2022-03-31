@@ -1,8 +1,11 @@
 #link-container {
     display: grid;
+    overflow: visible;
+    border-radius: 1.25rem;
 }
 
 #link-bg {
+    overflow: visible;
     fill: rgb(112,105,112);
     opacity: 0;
 }
