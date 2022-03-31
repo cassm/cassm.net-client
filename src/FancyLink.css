@@ -1,0 +1,8 @@
+#link-container {
+    display: grid;
+}
+
+#link-bg {
+    fill: rgb(112,105,112);
+    opacity: 0;
+}
