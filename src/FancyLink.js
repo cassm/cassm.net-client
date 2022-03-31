@@ -43,7 +43,7 @@ const FancyLink = (props) => {
 
     activeTl.current
       .to(q("#link-bg-active"), {opacity: 0.25, duration: 0.1}, "0")
-      .to(q("#link-bg-active"), {scale: 1.25, opacity: 0, duration: 0.4}, "<");
+      .to(q("#link-bg-active"), {scale: 1.5, opacity: 0, duration: 0.4, ease: ".out"}, ">-0.05");
 
     const openBg = () => {
       openTl.current.play();
