@@ -1,8 +1,10 @@
 import './NavMenu.css';
-import NavLinks from "./NavLinks";
 import classnames from 'classnames';
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
+import FancyLink from "./FancyLink";
+import {ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
+import {NavLink} from "react-router-dom";
 
 const NavMenu = (props) => {
   const animation = useRef();
@@ -49,7 +51,12 @@ const NavMenu = (props) => {
         <div id='hamburger-bottom' className='hamburger-bar'/>
       </button>
       <div id='menu-box'>
-        <NavLinks onClick={handleNavClick}/>
+        <NavLink className='navlink' to="/about" onClick={handleNavClick}>About</NavLink>
+        <NavLink className='navlink'  to="/talks" onClick={handleNavClick}>Talks</NavLink>
+        <NavLink className='navlink'  to="/contact" onClick={handleNavClick}>Contact</NavLink>
+        <a href='https://github.com/cassm' className='.logo-container' onClick={handleNavClick}>
+          <GithubLogo className='logo' fill='red'/>
+        </a>
       </div>
     </div>
 

@@ -59,10 +59,21 @@
 #menu-box .navlink {
     font-size: 2rem;
     opacity: 0;
+    transition: 1s;
+    transition-property: background-color;
+}
+
+#menu-box .navlink:hover, #menu-box .logo:hover {
+    background-color: #443d44;
+    transition: 0.1s;
+    transition-property: background-color;
 }
 
 #menu-box .logo {
     opacity: 0;
-    height: 4rem;
-    max-width: 4rem;
+    height: 6rem;
+    max-width: 6rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 50%;
 }
