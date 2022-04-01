@@ -18,6 +18,7 @@ const FancyLink = (props) => {
   const [activeSvg, setActiveSvg] = useState(
     <svg id='link-bg-active'
          style={{marginTop: -dimensions.y, height: dimensions.y, width: dimensions.x}}/>);
+  const [svgRendered, setSvgRendered] = useState(false);
 
   useEffect(() => {
     if (ref && ref.current) {
@@ -48,6 +49,8 @@ const FancyLink = (props) => {
           <circle id="left-circle-active" cx="50" cy="50" r="50"/>
           <circle id="right-circle-active" cx={svgWidth - 50} cy="50" r="50"/>
         </svg>);
+
+      setSvgRendered(true);
     }
   }, [svgWidth])
 
@@ -94,7 +97,7 @@ const FancyLink = (props) => {
         el.current.removeEventListener("click", clickBg);
       }
     }
-  }, [bgSvg, activeSvg]);
+  }, [svgRendered]);
 
   return (
     <div ref={el} id='link-container'>
