@@ -23,8 +23,8 @@ const NavMenu = (props) => {
       .to(q('#hamburger-mid'), {rotate: 45, ease: "back.out(2)"}, "<")
       .to(q('#hamburger-bottom'), {rotate: -45, ease: "back.out(2)"}, "<")
       .to(q('#menu-box'), {x: "-17rem", ease: "back.out(1.2)"}, "<")
-      .to(q('.navlink'), {opacity: 1, ease: "power4.in", stagger: {each: 0.1}}, "<-0.2")
-      .to(q('.logo'), {opacity: 1, ease: "power4.in", duration: 0.1}, ">")
+      .to(q('.navlink'), {opacity: 1, ease: "power4.in", stagger: {each: 0.1}}, "<")
+      .to(q('.logo'), {opacity: 1, ease: "power4.in", duration: 0.1, delay: 0.3}, "<")
   }, [])
 
   const handleMenuClick = () => {
