@@ -21,7 +21,7 @@ const FancyLink = (props) => {
   const [svgRendered, setSvgRendered] = useState(false);
 
   useEffect(() => {
-    if (ref && ref.current) {
+    if (ref && ref.current.offsetWidth) {
       setDimensions({
         x: ref.current.scrollWidth,
         y: ref.current.scrollHeight,
