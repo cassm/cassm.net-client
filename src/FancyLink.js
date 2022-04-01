@@ -10,7 +10,8 @@ const FancyLink = (props) => {
   const openTl = useRef();
   const activeTl = useRef();
 
-  const [dimensions, setDimensions] = useState({x: 0, y: 0})
+  const [dimensions, setDimensions] = useState({x: 0, y: 0, aspectRatio: 0})
+  const [svgWidth, setSvgWidth] = useState(100);
 
   useEffect(() => {
     if (ref && ref.current) {
@@ -19,27 +20,26 @@ const FancyLink = (props) => {
         y: ref.current.scrollHeight,
         aspectRatio: ref.current.scrollWidth/ref.current.scrollHeight
       });
-      console.log(dimensions)
+      setSvgWidth(100*dimensions.aspectRatio);
     }
-
   }, [ref, ref.current, props.windowDimensions])
 
-  const svgWidth = 100*dimensions.aspectRatio;
 
   useEffect(() => {
-    openTl.current = gsap.timeline({paused: true, defaults: {duration: 0.1, ease: "back.out(1.5)"}});
+    openTl.current = gsap.timeline({paused: true, defaults: {duration: 0.15, ease: "back.out(1.8)"}});
     activeTl.current = gsap.timeline({paused: true});
 
     openTl.current
       .set(q("#link-bg"), {opacity: 0, scale: 1})
       .set(q("#left-circle, #right-circle"), {scale: 0, transformOrigin: "50% 50%"})
-      .set(q("#centre-rect"), {scaleX: 0, transformOrigin: "50% 0"})
+      .set(q("#centre-rect"), {scale: 0, transformOrigin: "50% 50%"})
       .set(q("#left-circle"), {x: 0})
       .to(q("#link-bg"), {opacity: 0.15, duration: 0.05}, "0")
-      .to(q("#left-circle, #right-circle"), {scale: 1, duration: 0.1}, "0")
-      .to(q("#right-circle"), {x: svgWidth/2 - 50}, ">-0.075")
+      .to(q("#left-circle, #right-circle"), {scale: 1, duration: 0.1, ease: "back.out(1.2)"}, "0")
+      .to(q("#right-circle"), {x: svgWidth/2 - 50}, "<")
       .to(q("#left-circle"), {x: -(svgWidth/2 - 50)}, "<")
       .to(q("#centre-rect"), {scaleX: 1}, "<")
+      .to(q("#centre-rect"), {scaleY: 1, duration: 0.1, ease: "back.out(1.6)"}, "<")
 
     activeTl.current
       .to(q("#link-bg-active"), {opacity: 0.25, duration: 0.1}, "0")
@@ -66,7 +66,7 @@ const FancyLink = (props) => {
       el.current.removeEventListener("mouseleave", closeBg)
       el.current.removeEventListener("click", clickBg);
     }
-  }, [dimensions]);
+  }, [svgWidth]);
 
   return (
     <div ref={el} id='link-container'>
