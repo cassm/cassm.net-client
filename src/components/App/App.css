@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Questrial';
-  src: url('fonts/questrial-regular-webfont.woff2') format('woff2'),
-  url('fonts/questrial-regular-webfont.woff') format('woff');
+  src: url('../../fonts/questrial-regular-webfont.woff2') format('woff2'),
+  url('../../fonts/questrial-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

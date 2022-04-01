@@ -1,7 +1,7 @@
 import './Talks.css';
 import {memo} from 'react';
 import {v4 as uuidv4} from 'uuid';
-import Talk from './Talk'
+import Talk from '../Talk/Talk'
 
 const Talks = memo((props) => {
   return (

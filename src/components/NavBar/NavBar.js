@@ -1,10 +1,10 @@
 import './NavBar.css';
-import Logo from './Logo';
+import Logo from '../Logo/Logo';
 import {Link} from 'react-router-dom';
 import {memo} from 'react';
-import FancyLink from "./FancyLink";
-import NavMenu from "./NavMenu";
-import {ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
+import FancyLink from "../FancyLink/FancyLink";
+import NavMenu from "../NavMenu/NavMenu";
+import {ReactComponent as GithubLogo} from "../../Octicons-mark-github.svg";
 
 const NavBar = memo((props) => {
   return (

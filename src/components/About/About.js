@@ -1,4 +1,4 @@
-import { ReactComponent as Hi} from "./hi.svg";
+import { ReactComponent as Hi} from "../../hi.svg";
 import './About.css';
 import {useState} from "react";
 

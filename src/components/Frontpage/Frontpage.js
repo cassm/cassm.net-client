@@ -1,5 +1,5 @@
 import './Frontpage.css';
-import Logo from './Logo';
+import Logo from '../Logo/Logo';
 import {gsap} from 'gsap';
 import {useEffect, useRef, memo} from "react";
 import {v4 as uuidv4} from 'uuid';

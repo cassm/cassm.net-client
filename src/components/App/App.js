@@ -1,12 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Frontpage from "./Frontpage";
-import ShaderBackdrop from "./ShaderBackdrop";
+import Frontpage from "../Frontpage/Frontpage";
+import ShaderBackdrop from "../ShaderBackdrop/ShaderBackdrop";
 import {useEffect, useState} from "react";
-import NavBar from "./NavBar";
-import About from "./About";
-import Talks from "./Talks";
-import Contact from "./Contact";
+import NavBar from "../NavBar/NavBar";
+import About from "../About/About";
+import Talks from "../Talks/Talks";
+import Contact from "../Contact/Contact";
 
 function App() {
   const [windowDimensions, setWindowDimensions] = useState({
