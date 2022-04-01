@@ -4,33 +4,27 @@ import {gsap} from 'gsap';
 import {useEffect, useRef, memo} from "react";
 import {v4 as uuidv4} from 'uuid';
 
-const Frontpage = memo(() => {
+const Frontpage = memo((props) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
   const tl = useRef();
   const tl_repeat = useRef();
 
-  let minDimension = Math.min(window.innerHeight, window.innerWidth);
+  let minDimension = Math.min(props.windowDimensions.x, props.windowDimensions.y);
 
   useEffect(() => {
     const handleResize = () => {
-      minDimension = Math.min(window.innerHeight, window.innerWidth);
+      minDimension = Math.min(props.windowDimensions.x, props.windowDimensions.y);
       gsap.to(q("#logo-instance"), {
-        top: window.innerHeight/2 - minDimension*0.25,
-        left: window.innerWidth/2 - minDimension*0.26,
+        top: props.windowDimensions.y / 2 - minDimension * 0.25,
+        left: props.windowDimensions.x / 2 - minDimension * 0.26,
       });
       gsap.to(q("#start-circle-svg"), {
-        top: window.innerHeight/2 - minDimension*0.25,
-        left: window.innerWidth/2 - minDimension*0.26,
+        top: props.windowDimensions.y / 2 - minDimension * 0.25,
+        left: props.windowDimensions.x / 2 - minDimension * 0.26,
       });
     }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, []);
+  }, [props.windowDimensions]);
 
   useEffect(() => {
     tl.current = gsap.timeline()

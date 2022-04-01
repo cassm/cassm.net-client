@@ -9,31 +9,36 @@ import Talks from "./Talks";
 import Contact from "./Contact";
 
 function App() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [windowDimensions, setWindowDimensions] = useState({
+    x: window.innerWidth,
+    y: window.innerHeight
+  })
+
   useEffect(() => {
-    const updateHeight = () => {
-      setHeight(window.innerHeight);
-      setWidth(window.innerWidth);
+    const updateWindowDimensions = () => {
+      setWindowDimensions({
+        x: window.innerWidth,
+        y: window.innerHeight
+      });
     }
 
-    window.addEventListener('resize', updateHeight);
+    window.addEventListener('resize', updateWindowDimensions);
 
     return () => {
-      window.removeEventListener('resize', updateHeight);
+      window.removeEventListener('resize', updateWindowDimensions);
     }
   }, []);
 
   return (
     <div className="App">
       <Router>
-        <NavBar className='navbar'/>
+        <NavBar className='navbar' windowDimensions={windowDimensions}/>
 
         <div className='page'>
           <svg width='0' height='0'>
             <defs>
               <clipPath id='moon' clipPathUnits='userSpaceOnUse'>
-                <circle cx={width * 0.5} cy={0} r={height * 0.8}/>
+                <circle cx={windowDimensions.x * 0.5} cy={0} r={windowDimensions.y * 0.8}/>
               </clipPath>
             </defs>
           </svg>
@@ -45,7 +50,7 @@ function App() {
           </div>
           <div className='page-section'>
             <Routes>
-              <Route path='/' element={<Frontpage/>}/>
+              <Route path='/' element={<Frontpage windowDimensions={windowDimensions}/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/talks' element={<Talks/>}/>
               <Route path='/contact' element={<Contact/>}/>

@@ -2,7 +2,7 @@ import { ReactComponent as Hi} from "./hi.svg";
 import './About.css';
 import {useState} from "react";
 
-const About = () => {
+const About = (props) => {
   const [currentPic, setCurrentPic] = useState('ass_scream.png');
 
   const updatePic = to => () => {

@@ -6,7 +6,7 @@ import FancyLink from "./FancyLink";
 import NavMenu from "./NavMenu";
 import {ReactComponent as GithubLogo} from "./Octicons-mark-github.svg";
 
-const NavBar = memo(() => {
+const NavBar = memo((props) => {
   return (
     <div className='navbar'>
       <div className='brand'>
@@ -19,9 +19,9 @@ const NavBar = memo(() => {
       </div>
 
       <div className='links'>
-        <FancyLink content={"About"} to="/about"/>
-        <FancyLink content={"Talks"} to="/talks"/>
-        <FancyLink content={"Contact"} to="/contact"/>
+        <FancyLink content={"About"} to="/about" windowDimensions={props.windowDimensions}/>
+        <FancyLink content={"Talks"} to="/talks" windowDimensions={props.windowDimensions}/>
+        <FancyLink content={"Contact"} to="/contact" windowDimensions={props.windowDimensions}/>
         <a href='https://github.com/cassm' className='.logo-container'>
           <GithubLogo className='logo' fill='red'/>
         </a>

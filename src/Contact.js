@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 const FORM_ENDPOINT = '';
 
-const Contact = () => {
+const Contact = (props) => {
   const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const [submitted, setSubmitted] = useState(false);
 

@@ -22,7 +22,7 @@ const FancyLink = (props) => {
       console.log(dimensions)
     }
 
-  }, [ref, ref.current])
+  }, [ref, ref.current, props.windowDimensions])
 
   const svgWidth = 100*dimensions.aspectRatio;
 
