@@ -94,14 +94,16 @@ const FancyLink = (props) => {
         activeTl.current.restart();
       }
 
-      el.current.addEventListener("mouseenter", openBg);
-      el.current.addEventListener("mouseleave", closeBg);
-      el.current.addEventListener("click", clickBg);
+      const target = el.current;
+
+      target.addEventListener("mouseenter", openBg);
+      target.addEventListener("mouseleave", closeBg);
+      target.addEventListener("click", clickBg);
 
       return () => {
-        el.current.removeEventListener("mouseenter", openBg)
-        el.current.removeEventListener("mouseleave", closeBg)
-        el.current.removeEventListener("click", clickBg);
+        target.removeEventListener("mouseenter", openBg)
+        target.removeEventListener("mouseleave", closeBg)
+        target.removeEventListener("click", clickBg);
       }
     }
   }, [svgRendered]);
