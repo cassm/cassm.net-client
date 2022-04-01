@@ -101,6 +101,8 @@ const FancyLink = (props) => {
       target.addEventListener("click", clickBg);
 
       return () => {
+        openTl.current.pause("0");
+        activeTl.current.pause("0");
         target.removeEventListener("mouseenter", openBg)
         target.removeEventListener("mouseleave", closeBg)
         target.removeEventListener("click", clickBg);
