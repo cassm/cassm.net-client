@@ -2,7 +2,7 @@ import './NavMenu.css';
 import classnames from 'classnames';
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
-import {ReactComponent as GithubLogo} from "../../Octicons-mark-github.svg";
+import {ReactComponent as GithubLogo} from "../../svg/Octicons-mark-github.svg";
 import {NavLink} from "react-router-dom";
 
 const NavMenu = (props) => {
