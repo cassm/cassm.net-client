@@ -33,7 +33,14 @@ const FancyLink = (props) => {
 
 
   useEffect(() => {
-    if (dimensions.x !== 0 && dimensions.y !== 0) {
+    if (dimensions.x === 0 || dimensions.y === 0) {
+      setBgSvg(
+        <svg id='link-bg'
+           style={{marginTop: -dimensions.y, height: dimensions.y, width: dimensions.x}}/>);
+      setActiveSvg(
+        <svg id='link-bg-active'
+             style={{marginTop: -dimensions.y, height: dimensions.y, width: dimensions.x}}/>);
+    } else {
       setBgSvg(
         <svg id="link-bg" viewBox={`0 0 ${svgWidth} 100`}
              style={{marginTop: -dimensions.y, height: dimensions.y, width: dimensions.x}}>
