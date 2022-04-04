@@ -7,7 +7,7 @@ const Talks = memo((props) => {
   return (
     <div className='talks'>
       <Talk
-        src='https://www.youtube.com/embed/iU2-qH7wGcU'
+        id='iU2-qH7wGcU'
         title='[EMF 2018] Algorithmic Light Art: How to Not Suck'
         key={uuidv4()}
         description={
@@ -31,7 +31,7 @@ const Talks = memo((props) => {
           </div>
         }/>
       <Talk
-        src='https://www.youtube.com/embed/W86cTIoMv2U'
+        id='W86cTIoMv2U'
         title='This is just a cat video'
         key={uuidv4()}
         description={
