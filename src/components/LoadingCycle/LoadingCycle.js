@@ -1,9 +1,10 @@
 import './LoadingCycle.css';
 import gsap from 'gsap';
 import {v4 as uuidv4} from 'uuid';
-import {useEffect, useRef} from "react";
+import {useEffect, useState, useRef} from "react";
 
 const LoadingCycle = (props) => {
+  const [uuid] = useState(uuidv4());
   const dots = [];
   const numDots = props.numDots || 7;
   const el = useRef();
@@ -11,30 +12,29 @@ const LoadingCycle = (props) => {
 
   useEffect(() => {
     const tl = gsap.timeline();
-    const dotDuration = 0.4;
-    const fadeDuration = 1.0
-    const staggerEach = 0.2
+    const dotDuration = 0.3;
+    const fadeDuration = 0.75;
+    const staggerEach = 0.1;
 
     tl.set(q('.loading-cycle'), {transformOrigin: "50% 50%"})
-      .to(q('.loading-cycle'), {rotation: -360, ease: "none", duration: 4 * (staggerEach*numDots + dotDuration + fadeDuration), repeat: -1});
 
     for (let i = 0; i < numDots; i++) {
-      tl.set(q(`.loading-dot-${i}`), {scale: 1})
-        .set(q(`.loading-dot-${i}`), {transformOrigin: "50% 50%"})
-        .fromTo(q(`.loading-dot-${i}`),
-          {opacity: 0, scale: 0.3},
+      const dotSelector = q(`.loading-dot-${uuid}-${i}`);
+      tl.set(dotSelector, {scale: 1})
+        .set(dotSelector, {transformOrigin: "50% 50%"})
+        .fromTo(dotSelector,
+          {opacity: 0, scale: 0.6},
           {
             opacity: 1,
             scale: 1,
-            ease: "back.out",
+            ease: "none",
             duration: dotDuration,
             fill: "#F7C90F",
             delay: staggerEach * i,
             repeat: -1,
             repeatDelay: staggerEach * (numDots) - dotDuration
           }, "0")
-    .fromTo(q(`.loading-dot-${i}`),
-          {scale: 1, opacity: 1, fill: "#F7C90F"},
+    .to(dotSelector,
           {
             scale: 0.3,
             opacity: 0,
@@ -52,7 +52,7 @@ const LoadingCycle = (props) => {
 
   for (let i = 0; i < numDots; i++) {
     dots.push(
-      <circle fill="white" className={`loading-dot-${i}`} key={uuidv4()}
+      <circle fill="transparent" className={`loading-dot-${uuid}-${i}`} key={uuidv4()}
               cx={50 + 40 * Math.sin(i * phasePerDot)}
               cy={50 - 40 * Math.cos(i * phasePerDot)}
               r="10"/>
@@ -60,7 +60,7 @@ const LoadingCycle = (props) => {
   }
 
   return (
-    <div ref={el}>
+    <div id={props.id} key={uuid} ref={el}>
       <svg className="loading-cycle" viewBox="0 0 100 100" overflow="visible">
         {dots}
       </svg>
