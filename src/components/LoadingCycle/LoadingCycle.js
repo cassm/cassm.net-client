@@ -1,3 +1,4 @@
+import './LoadingCycle.css';
 import gsap from 'gsap';
 import {v4 as uuidv4} from 'uuid';
 import {useEffect, useRef} from "react";
