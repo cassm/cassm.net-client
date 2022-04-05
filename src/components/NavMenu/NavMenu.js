@@ -50,6 +50,7 @@ const NavMenu = (props) => {
         <div id='hamburger-bottom' className='hamburger-bar'/>
       </button>
       <div id='menu-box'>
+        <NavLink className='navlink' to="/" onClick={handleNavClick}>Home</NavLink>
         <NavLink className='navlink' to="/about" onClick={handleNavClick}>About</NavLink>
         <NavLink className='navlink'  to="/talks" onClick={handleNavClick}>Talks</NavLink>
         <NavLink className='navlink'  to="/contact" onClick={handleNavClick}>Contact</NavLink>
