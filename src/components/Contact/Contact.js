@@ -1,7 +1,6 @@
 import './Contact.css';
 import {useEffect, useState} from "react";
 import {validate as validateEmail} from 'email-validator';
-import {init as emailJsInit, sendForm} from '@emailjs/browser';
 import { useForm } from "react-hook-form";
 
 const FORM_ENDPOINT = '';
@@ -10,15 +9,18 @@ const Contact = (props) => {
   const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    // TODO: this needs moving onto the backend
-    emailJsInit(`${process.env.REACT_APP_EMAILJS_API_KEY}`);
-  }, []);
-
   const doSubmit = (formData, e) => {
-    setSubmitted(true);
-    console.log(formData);
-    sendForm('cassm_gmail', 'cassm_net_contact_form', e.target);
+    const data = new FormData(e.target);
+    const values = Object.fromEntries(data.entries());
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+    };
+    fetch('/formdata', requestOptions)
+      .then(response => response.json())
+      .then(setSubmitted(true))
   }
 
   const handleBlur = (e) => {
