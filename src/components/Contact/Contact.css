@@ -59,6 +59,22 @@ h2, p {
     color: white;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
+.submission-error {
+    background-color: #efa0a0;
+    border-radius: 1.5rem;
+    text-align: center;
+    margin: auto;
+}
+.submission-error h3 {
+    color: black;
+    margin: 0.5rem 1rem;
+}
+
+
 textarea.errored, input.errored {
     background-color: #f57272;
 }
