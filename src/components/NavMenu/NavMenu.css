@@ -69,6 +69,15 @@
     transition-property: background-color;
 }
 
+#menu-box .navlink:active, #menu-box .logo:active {
+    color: #232123;
+    fill: #232123;
+    background-color: rgb(168, 155, 168);
+    transition-property: color, background-color;
+    transition: 0.1s;
+}
+
+
 #menu-box .logo {
     opacity: 0;
     height: 6rem;

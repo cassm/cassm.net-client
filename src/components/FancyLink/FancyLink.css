@@ -11,6 +11,13 @@
     transition: 0.1s;
 }
 
+#link-container:active .navlink {
+    color: #232123;
+    background-color: rgb(168, 155, 168);
+    transition-property: color, background-color;
+    transition: 0.1s;
+}
+
 #link-container .navlink {
     z-index: 301;
 }
