@@ -35,10 +35,10 @@ const Contact = (props) => {
 
   if (submitted) {
     return (
-      <>
+      <div id='submitted'>
         <h2>Thanks for getting in touch!</h2>
         <p>I'll get back to you shortly</p>
-      </>
+      </div>
     );
   }
 
