@@ -8,8 +8,9 @@ const FORM_ENDPOINT = '';
 const Contact = (props) => {
   const {register, handleSubmit, watch, formState: {errors}} = useForm();
   const [submitted, setSubmitted] = useState(false);
+  const [errored, setErrored] = useState(false);
 
-  const doSubmit = (formData, e) => {
+  const doSubmit = async (formData, e) => {
     const data = new FormData(e.target);
     const values = Object.fromEntries(data.entries());
 
@@ -18,9 +19,15 @@ const Contact = (props) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values)
     };
-    fetch('/formdata', requestOptions)
-      .then(response => response.json())
-      .then(setSubmitted(true))
+
+    const res = await fetch('/formdata', requestOptions);
+    if (res.ok) {
+      console.log('submit')
+      setSubmitted(true);
+    } else {
+      console.log('error')
+      setErrored(true);
+    }
   }
 
   const handleBlur = (e) => {
