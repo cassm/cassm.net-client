@@ -104,6 +104,13 @@ const Contact = (props) => {
         />
         {errors.message?.type === 'required' && <p className='error'>this field is required</p>}
       </label>
+      <label>
+        <input type="checkbox" id="sendcopy"
+          {...register(
+            'sendcopy'
+          )}/>
+        Send a copy to my email address
+      </label>
       { errored &&
         <div className='submission-error'>
           <h3>Sorry, there was a problem submitting your information. Please try again later.</h3>

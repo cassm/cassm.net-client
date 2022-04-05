@@ -34,6 +34,10 @@ input[type=text], textarea {
     width: 100%;
 }
 
+input[type=checkbox] {
+    margin-right: 1rem;
+}
+
 .error {
     margin-top: 0.5rem;
     color: #efa0a0;
