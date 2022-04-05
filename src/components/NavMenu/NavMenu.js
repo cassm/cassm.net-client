@@ -16,7 +16,6 @@ const NavMenu = (props) => {
     const q = gsap.utils.selector(el);
 
     animation.current
-      // .duration(0.5)
       .to(q('#hamburger-top'), {y: "+=0.65rem", ease: "back.in(2)"}, 0)
       .to(q('#hamburger-bottom'), {y: "-=0.65rem", ease: "back.in(2)"}, 0)
       .to(q('#hamburger-top'), {rotate: 45, ease: "back.out(2)"}, ">")

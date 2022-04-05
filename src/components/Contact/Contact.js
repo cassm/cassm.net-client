@@ -1,5 +1,5 @@
 import './Contact.css';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {validate as validateEmail} from 'email-validator';
 import { useForm } from "react-hook-form";
 
