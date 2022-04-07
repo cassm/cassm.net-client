@@ -3,7 +3,7 @@ import './About.css';
 import {useState} from "react";
 
 const About = (props) => {
-  const [currentPic, setCurrentPic] = useState('ass_scream.png');
+  const [currentPic, setCurrentPic] = useState('selfie_square.jpg');
 
   const updatePic = to => () => {
     setCurrentPic(to);
@@ -11,7 +11,7 @@ const About = (props) => {
 
   const createLink = (text, href, picRef) => {
     return (
-      <a onMouseEnter={updatePic(picRef)} onMouseLeave={updatePic('ass_scream.png')} href={href}>{text}</a>
+      <a onMouseEnter={updatePic(picRef)} onMouseLeave={updatePic('selfie_square.jpg')} href={href}>{text}</a>
     )
   }
 
